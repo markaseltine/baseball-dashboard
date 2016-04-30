@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+<div id="teamSelector" class="controlPanel">
+
+<h2><%= title %></h2>
+
+<div id="teamSelectorTable" class="selectorTable" >
+<table>
+  <thead>
+    <tr><th>Year</th><th>Team Name</th><th>Lea</th><th>Div</th><th>Win</th><th>Lss</th><th>Lea</th><th>Div</th><th>WS</th><th>Roster</th><th>Statistics</th></tr>
+  </thead>
+  <tbody class="results">
+  <% for(var i = 0; i < teams.length; i++) { %>
+  <tr><td><%= teams[i].yearID %></td><td><%= teams[i].name %></td><td><%= teams[i].lgID %></td><td><%= teams[i].divID %></td><td><%= teams[i].W %></td><td><%= teams[i].L %></td><td><%= teams[i].DivWin %></td><td><%= teams[i].LgWin %></td><td><%= teams[i].WSWin %></td><td><button class="pickButton" onclick="loadTeamRoster({ 'teamID': '<%= teams[i].teamID %>', 'yearID': '<%= teams[i].yearID %>' })">View Roster</button></td><td><button class="pickButton" onclick="loadTeamData('<%= teams[i].teamID %>')">View Data</button></td></tr>
+<% }; %>
+</tbody>
+</table>
+</div>
+</div>
+
+<script src="/js/jquery-1.11.3.js"></script>
+<script>
+  var loadTeamRoster = function (teamData) {
+    $("#teamDisplay").empty(); 
+    $("#teamDisplay").load("http://localhost:3000/team/roster/" + teamData.teamID + '/' + teamData.yearID); 
+  };
+  var loadTeamData = function (teamID) {
+    var url = "http://localhost:3000/team/data/" + teamID;
+    $("#teamDisplay").empty(); 
+    $("#teamDisplay").load(url); 
+  };
+</script>

@@ -1,0 +1,134 @@
+
+* {
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 100%;
+  color: #000000;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 140%;
+  color: #0000ff;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  margin: 3px 0 5px 0;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 120%;
+  color: #000000;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 0 5px 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
+th, td {
+  font-family: 'Arial Narrow', sans-serif;
+  font-size: 75%;
+  color: #000000;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+}
+
+th {
+  font-weight: bold;
+}
+
+.pickButton {
+  font-family: 'Arial Narrow', sans-serif;
+  font-size: 65%;
+  color: #000000;
+  letter-spacing: 0px;
+  line-height: .8em;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: none;
+}
+
+#controlPanelBody {
+  background-color:#d9d9d9;
+  height:233px; 
+}
+
+#resultsBody {
+  background-color:#d9d9d9;
+  height:350px; 
+}
+
+.dataPanel, .controlPanel, .selectorPanel {
+  background-color:#f2f2f2;
+  margin: 7px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.selectorPanel {
+  height:140px;
+}
+
+.tallCell {
+  height:18px;
+}
+
+.resultsTable {
+  height:273px;
+  overflow-x:auto; 
+  overflow-y:auto;
+}
+
+.selectorTable {
+  height:177px;
+  overflow-y:auto;
+}
+
+.buttonFooter {
+  margin-top:5px;
+}
+
+.layoutTable, .lookupTable, .tallCell {
+  border-style: none;
+}
+
+.headerRepeat {
+  visibility: hidden;
+}
+
+#playerBatting {
+  width:305px;
+}
+
+#teamStatistics {
+  width:385px;
+}
+
+#teamRoster {
+  width:370px;
+}
+
+#teamSelectorTable {
+  width:430px;
+}
+
+#playerSelectorTable {
+  width:370px;
+}

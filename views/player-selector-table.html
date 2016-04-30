@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+<div id="playerSelector" class="controlPanel">
+
+<h2><%= title %></h2>
+
+<div id="playerSelectorTable" class="selectorTable" >
+<table>
+  <thead>
+    <tr><th>First Name</th><th>Last Name</th><th>B</th><th>T</th><th>Debut</th><th>Last Game</th><th>Statistics</th><th>Chart</th></tr>
+  </thead>
+  <tbody>
+  <% for(var i = 0; i < players.length; i++) { %>
+  <tr><td><%= players[i].nameFirst %></td><td><%= players[i].nameLast %></td><td><%= players[i].bats %></td><td><%= players[i].throws %></td><td><%= players[i].debut %></td><td><%= players[i].finalGame %></td><td><button class="pickButton" onclick="loadPlayerData('<%= players[i].playerID %>')">View Stats</button></td><td><button class="pickButton" onclick="loadPlayerGraph('<%= players[i].playerID %>')">Chart</button></td></tr>
+<% }; %>
+</table>
+</div>
+</div>
+
+<script src="/js/jquery-1.11.3.js"></script>
+<script>
+  var loadPlayerData = function (playerID) {
+    var url = "http://localhost:3000/player/batting/" + playerID;
+    $("#playerDisplay").empty(); 
+    $("#playerDisplay").load(url); 
+  };
+  var loadPlayerGraph = function (playerID) {
+    var url = "http://localhost:3000/player/hrbarchart/" + playerID;
+    $("#graphDisplay").empty();
+    var $newDiv = $( "<div id='graphContent' class='dataPanel' style='width:538px'></div>" );
+    $("#graphDisplay").append($newDiv); 
+    $newDiv.load(url); 
+  };
+</script>

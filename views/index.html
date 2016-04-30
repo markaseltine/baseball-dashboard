@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <title>Baseball Dashboard</title>
+  <script src="/js/jquery-1.11.3.js"></script>
+  <script>
+    // load initial control panel content 
+    $(function(){
+      $("#selector").load("player-lookup.html"); 
+    });
+    var loadPlayerSelector = function () {
+      $("#selector").empty(); 
+      $("#selector").load("player-lookup.html"); 
+    };
+    var loadTeamSelector = function () {
+      $("#selector").empty(); 
+      $("#selector").load("team-lookup.html"); 
+    };
+    var removeTeam = function () {
+      $("#teamDisplay").empty(); 
+    };
+    var removeBatting = function () {
+      $("#playerDisplay").empty(); 
+    };
+    var removeGraph = function () {
+      $("#graphDisplay").empty();
+    };
+  </script>
+</head>
+
+<body>
+  <div id="dashboardHeader">
+    <h2><%= title %></h2>
+  </div>
+  <div id="dashboardBody" class="body">
+    <div id="controlPanel" class="sectionPanel">
+      <div id="controlPanelHeader" class="header">
+      </div>
+      <div id="controlPanelBody" class="body">      
+        <table class="layoutTable">
+          <tr class="layoutTable">
+            <td class="layoutTable">
+              <div id="selectorPanel">
+                <div id="selectorPanelHeader" class="header">
+                </div>
+                <div id="selector" class="content">
+                </div>
+                <div id="selectorPanelToggle" class="controlPanel">
+                  <h2>Choose Selector Type</h2>
+                  <button onclick="loadPlayerSelector()">Player Selector</button>
+                  <button onclick="loadTeamSelector()">Team Selector</button>
+                </div>
+              </div>
+            </td>
+            <td  class="layoutTable">
+              <div id="selectedPanel">
+                <div id="selectedPanelHeader" class="header">
+                </div>
+                <div id="selectedData" class="content"></div>
+                </div>
+                <div id="selectedPanelFooter" class="footer">
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- controlPanelFooter can hold buttons that do queries/graphs across the players/teams selected -->
+      <div id="controlPanelFooter" class="buttonFooter">
+        <table class="layoutTable">
+          <tr class="layoutTable">
+            <td class="layoutTable"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="resultsPanel" class="sectionPanel">
+      <div id="resultsHeader" class="header">
+        <h2>Results</h2>
+      </div>
+      <div id="resultsBody" class="body">
+        <table class="layoutTable">
+          <tr class="layoutTable">
+            <td class="layoutTable"><div id="teamDisplay" class="content"></div></td>
+            <td class="layoutTable"><div id="playerDisplay" class="content"></div></td>
+            <td class="layoutTable"><div id="graphDisplay" class="content"></div></td>
+          </tr>
+        </table>
+      </div>
+      <div id="resultsFooter" class="buttonFooter">
+        <button onclick="removeTeam()">Clear Team Panel</button>
+        <button onclick="removeBatting()">Clear Player Panel</button>
+        <button onclick="removeGraph()">Clear Chart Panel</button>
+      </div>
+  </div>
+  <div id="dashboardFooter" class="footer">
+  </div>
+</body>
+</html>

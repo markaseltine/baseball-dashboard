@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+<div id="teamStatistics" class="dataPanel">
+
+<h2><%= title %>: <%= team %></h2>
+
+<table class="tableHeader">
+  <tr><th>Year</th><th>Gms_</th><th>Win</th><th>Loss</th><th>ABs_</th><th>Runs</th><th>Hits_</th><th>Dbls_</th><th>Trps_</th><th>HRs_</th><th>AVG_</th><th>Win%</th></tr>
+</table>
+<div class="resultsTable">
+<table>
+  <tr class="headerRepeat"><th>Year</th><th>Team</th><th>Gms_</th><th>Win</th><th>Loss</th><th>ABs_</th><th>Runs</th><th>Hits_</th><th>Dbls_</th><th>Trps_</th><th>HRs_</th><th>AVG_</th><th>Win%</th></tr>
+<% for(var i = 0; i < stats.length; i++) { %>
+  <tr><td><%= stats[i].yearID %></td><td><%= stats[i].G %></td><td><%= stats[i].W %></td><td><%= stats[i].L %></td><td><%= stats[i].AB %></td><td><%= stats[i].R %></td><td><%= stats[i].H %></td><td><%= stats[i].Double %></td><td><%= stats[i].Triple %></td><td><%= stats[i].HR %></td><td><%= (stats[i].H/stats[i].AB).toFixed(3) %></td><td><%= (stats[i].W/stats[i].G).toFixed(3) %></td></tr>
+<% }; %>
+</table>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+<div id="teamRoster" class="dataPanel">
+
+<h2><%= title %></h2>
+
+<table class="tableHeader">
+    <tr><th>First Name</th><th>Last Name____</th><th>B</th><th>T</th><th>Debut______</th><th>Last Game</th><th>Statistics</th></tr>
+</table>
+<div class="resultsTable">
+<table>
+    <tr class="headerRepeat"><th>First Name</th><th>Last Name____</th><th>B</th><th>T</th><th>Debut______</th><th>Last Game</th><th>Statistics</th></tr>
+  <% for(var i = 0; i < players.length; i++) { %>
+  <tr><td><%= players[i].nameFirst %></td><td><%= players[i].nameLast %></td><td><%= players[i].bats %></td><td><%= players[i].throws %></td><td><%= players[i].debut %></td><td><%= players[i].finalGame %></td><td><button class="pickButton" onclick="loadPlayerData('<%= players[i].playerID %>')">View Stats</button></td></tr>
+<% }; %>
+</table>
+</div>
+</div>
+
+<script src="/js/jquery-1.11.3.js"></script>
+<script>
+  var loadPlayerData = function (playerID) {
+    var url = "http://localhost:3000/player/batting/" + playerID;
+    $("#playerDisplay").empty(); 
+    $("#playerDisplay").load(url); 
+  };
+</script>

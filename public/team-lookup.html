@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+<div id="teamSelectorPanel" class="selectorPanel">
+
+<h2>Team Selector</h2>
+
+<div id="teamSelector">
+  <table class="lookupTable">
+    <tr><td class="tallCell">
+      <select id="won" name="won">
+        <option value="" selected>Select Level Won</option>
+        <option value="DivWin">Division</option>
+        <option value="LgWin">League</option>
+        <option value="WSWin">World Series</option>
+      </select> 
+    </td></tr>
+    <tr><td class="tallCell">
+      <input type="text" id="name" value="" size="30" placeholder="Team Name or City"/>
+    </td></tr>
+    <tr><td class="tallCell">
+     <input type="text" id="teamID" value="" size="20" placeholder="TeamID"/>
+    </td></tr>
+    <tr><td class="tallCell">
+      <input type="text" id="year" value="" size="12" placeholder="Year (####)"/>
+    </td></tr>
+  </table>
+  <button id="teamLookupSelect" onclick="loadSelectedData()">Find Teams</button>
+  <button onclick="removeSelectedData()">Reset Selectors</button>
+</div>
+
+<script src="/js/jquery-1.11.3.js"></script>
+<script src="/js/team-lookup.js"></script>

@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+<div id="playerSelectorPanel" class="selectorPanel">
+
+  <h2>Player Selector</h2>
+
+  <div id="playerSelector">
+    <table class="lookupTable">
+      <tr><td class="tallCell">
+        <select id="playerThrows" name="throws">
+          <option value="" disabled selected>Select Throws Left or Right</option>
+          <option value="L">Throws Left</option>
+          <option value="R">Throws Right</option>
+        </select> 
+      </td></tr>
+      <tr><td class="tallCell">
+        <select id="playerBats" name="bats">
+          <option value="" disabled selected>Select Bats Left or Right</option>
+          <option value="L">Bats Left</option>
+          <option value="R">Bats Right</option>
+          <option value="B">Bats Both (Switch Hitter)</option>
+        </select>
+      </td></tr>
+      <tr><td class="tallCell">
+        <input type="text" id="playerLast" size="30" placeholder="Enter the Player's Last Name here!"/>
+      </td></tr>
+    </table>
+    <div id="playerSelectorFooter" class="buttonFooter">
+      <button onclick="loadSelectedData()">Find Players</button>
+      <button onclick="removeSelectedData()">Reset Selectors</button>
+    </div>
+  </div>
+  <div id="toggleSelector" class="footer">
+
+</div>
+
+<script src="/js/jquery-1.11.3.js"></script>
+<script src="/js/player-lookup.js"></script>
